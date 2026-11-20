@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXO | Login</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #191918;
+    color: #e6dfd2;
+    min-height: 100vh;
+}
+
+header {
+    height: 80px;
+    background: #222220;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #33322f;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d7c9ae;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.symbol {
+    font-size: 32px;
+}
+
+main {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: linear-gradient(#252523, #181817);
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    background: #222220;
+    padding: 38px;
+    border: 1px solid #393834;
+}
+
+.small-title {
+    color: #a69b87;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    color: #e8e1d6;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #888780;
+    text-align: center;
+    margin: 12px 0 35px;
+    line-height: 1.6;
+}
+
+.field {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-size: 11px;
+    color: #b8ad99;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+input {
+    width: 100%;
+    background: #191918;
+    border: 1px solid #3b3a36;
+    padding: 14px;
+    color: #e6dfd2;
+    font-size: 13px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #b9a889;
+}
+
+input::placeholder {
+    color: #686762;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 8px;
+    background: #c8b99d;
+    border: 1px solid #c8b99d;
+    color: #1c1c1a;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: transparent;
+    color: #c8b99d;
+}
+
+#mensaje {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 18px;
+    line-height: 1.6;
+    color: #b8ad99;
+}
+
+.footer {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #625f57;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 28px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="brand">
+        <span class="symbol">♢</span>
+        <span>AXO</span>
+    </div>
+</header>
+
+<main>
+
+    <div class="card">
+
+        <div class="small-title">Portal digital</div>
+
+        <h1>Iniciar sesión</h1>
+
+        <p class="subtitle">
+            Introduce tus datos para continuar
+        </p>
+
+        <form id="loginForm">
+
+            <div class="field">
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="correo@ejemplo.com"
+                    required
+                >
+            </div>
+
+            <div class="field">
+                <label for="contrasena">Contraseña</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                    placeholder="Ingresa tu contraseña"
+                    required
+                >
+            </div>
+
+            <button type="submit">
+                Iniciar sesión
+            </button>
+
+            <p id="mensaje"></p>
+
+        </form>
+
+        <div class="footer">
+            AXO · Experiencia digital
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    document.getElementById("mensaje").textContent =
+        "Demostración completada correctamente.";
+
+    document.getElementById("mensaje").style.color = "#b8ad99";
+
+    // Simulación local:
+    // no guarda, registra ni transmite los valores ingresados.
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
